@@ -12,9 +12,11 @@ app.get("/", (req, res) => {
 
 app.get("/test", (req, res) => {
   res.json({
-     message: "Hello World",
+     message: "CI CD Pipeline Is Working",
      status: 200
      });
+
+     
 })
 
 
