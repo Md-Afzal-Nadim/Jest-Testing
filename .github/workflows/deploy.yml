@@ -14,7 +14,7 @@ jobs:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
         with: { node-version: '20', cache: 'npm' }
-      - run: npm ci
+      - run: npm install
       - run: npm run test
 
   # ── Job 2: Deploy (only if tests passed) ─────────
@@ -27,8 +27,8 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Deploy to Render / Railway / VPS
+      - name: Deploy to Render
         run: |
-          curl -X POST "${{ secrets.RENDER_DEPLOY_HOOK }}"
+          curl -X POST "https://api.render.com/deploy/srv-daropkl9fdbs73affov0?key=rauHww7LBeo"
 
          
